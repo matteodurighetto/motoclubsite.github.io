@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        // Fetch motorcycle club name from external file
+        config=JSON.parse(fetch('ClubName.txt'))
+        document.getElementById('ClubName').innerText = config.ClubName ;
+        document.getElementById('ClubNameHeader').innerText = `Welcome to the ${config.ClubName}'s GitHub Pages!`;
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="clubName">${config.ClubName} Site</title>
+
+    <style>
+        /* Basic CSS to style the index.html */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #333;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style for buttons */
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="clubNameHeader">Welcome to the Awesome Motorcycle Club's GitHub Pages!</h1>
+
+        <h2>About Us</h2>
+        <p>We are a passionate community of motorcycle enthusiasts who love to ride, explore, and connect with fellow riders. Our club is open to riders of all levels, from beginners to seasoned veterans. Join us on our adventures!</p>
+
+        <h2>Events</h2>
+        <p>Stay tuned for upcoming events and rides! Whether it's a scenic countryside tour, a thrilling track day, or a community meetup, we have something for everyone.</p>
+
+        <h2>Membership</h2>
+        <p>Interested in joining our club? Membership is open to anyone who shares our love for motorcycles and a sense of camaraderie. Reach out to us to learn more about becoming a member.</p>
+
+        <h2>Connect with Us</h2>
+        <ul>
+            <li><strong>Website:</strong> <a href="https://yourclubwebsite.com">Awesome Motorcycle Club</a></li>
+            <li><strong>Facebook:</strong> <a href="https://www.facebook.com/AwesomeMCClub">AwesomeMCClub</a></li>
+            <li><strong>Instagram:</strong> <a href="https://www.instagram.com/awesome_mc_club/">@awesome_mc_club</a></li>
+            <li><strong>Twitter:</strong> <a href="https://twitter.com/AwesomeMC">@AwesomeMC</a></li>
+        </ul>
+
+        <h2>Get in Touch</h2>
+        <p>Have questions or want to get involved? Feel free to reach out to us via email at <a href="mailto:info@yourclubwebsite.com">info@yourclubwebsite.com</a> or through our social media channels.</p>
+    </div>
+</body>
+</html>
