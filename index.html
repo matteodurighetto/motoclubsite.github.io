@@ -1,12 +1,11 @@
 ---
-layout: home
 title: Motorcycle Club
 description: Informations and events from our Motorcycle Club
 permalink: /
 ---
 {% assign settings = site.data.settings %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +19,10 @@ permalink: /
     <!-- Navigation links with dropdown menu -->
     <nav>
       <ul>
-        <li><a href="/" lang="en">Home</a><a href="/" lang="it">Casa</a></li>
+        <li>
+        <a href="/" lang="en" xml:lang="en">Home</a>
+        <a href="/" lang="it" xml:lang="it">Casa</a>
+        </li>
         <li><a href="/events" lang="en">Events</a><a href="/events" lang="it">Eventi</a></li>
         <li class="dropdown">
           <a href="#" class="dropbtn" lang="en">Chapters</a><a href="#" class="dropbtn" lang="it">Capitoli</a>

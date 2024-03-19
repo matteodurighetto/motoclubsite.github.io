@@ -1,0 +1,25 @@
+languages: 
+- language: "it" 
+  links: 
+  - title: "Informazioni"
+    url: /informazioni/ 
+  - title: "Contatti"
+    url: /contatti/ 
+  - title: "Archivi"
+    url: /archivi/ 
+  - title: "FMI"
+    url: https://www.federmoto.it/
+  - title: "en"
+    url: /en/ 
+- language: "en" 
+  links: 
+  - title: "Information" 
+    url: /informations/ 
+  - title: "Contacts"
+    url: /contacts/ 
+  - title: "Archives"
+    url: /archives/ 
+  - title: "FMI" 
+    url: https://www.federmoto.it/
+  - title: "it" 
+    url: /
