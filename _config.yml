@@ -1,3 +1,142 @@
 remote_theme: pages-themes/cayman@v0.2.0
+
+
+############################
+# --- Required options --- #
+############################
+
+# Name of website
+title: Motorcycle Club
+
+# Your name to show in the footer
+author: test
+
+###############################################
+# --- List of links in the navigation bar --- #
+###############################################
+
+navbar-links:
+  About Me: "test"
+
+################
+# --- Logo --- #
+################
+
+# Image to show in the navigation bar - works best with a square image
+# Remove this parameter if you don't want an image in the navbar
+# avatar: "/assets/img/avatar-icon.png"
+
+#####################################
+# --- Footer social media links --- #
+#####################################
+
+# Select the social network links that you want to show in the footer.
+# You can change the order that they show up on the page by changing the order here.
+# Uncomment the links you want to show and add your information to each one.
+social-network-links:
+  email: "example@example.com"
+  rss: true  # remove this line if you don't want to show an RSS link at the bottom
+  facebook: testmoto
+  instagram: testmoto   
+#  github: testmoto
+#  twitter: testmoto
+#  patreon: testmoto
+#  youtube: "@testmoto"
+#  medium: yourname
+#  reddit: yourname
+#  linkedin: testmoto
+#  xing: testmoto
+#  stackoverflow: "testmoto"
+#  snapchat: testmoto
+#  spotify: testmoto
+#  telephone: testmoto
+#  steam: testmoto
+#  twitch: testmoto
+#  yelp: testmoto
+#  telegram: testmoto
+#  calendly: testmoto
+#  mastodon: testmoto
+#  bluesky: testmoto
+#  ORCID: testmoto
+#  google-scholar: testmoto
+#  discord: "invite_code" or "users/userid" or "invite/invite_code" 
+#  kaggle: testmoto
+#  hackerrank: testmoto
+#  gitlab: testmoto
+#  itchio: testmoto
+
+###########################
+# --- General options --- #
+###########################
+
+# Select which social network share links to show in posts
+share-links-active:
+  twitter: false
+  facebook: true
+  linkedin: false
+  vk: false
+
+# How to display the link to your website in the footer
+# Remove this if you don't want a link in the footer
+#url-pretty: "MyWebsite.com"
+
+
+######################################
+# --- Colours / background image --- #
+######################################
+
+# Personalize the colours in your website. Colour values can be any valid CSS colour
+
+navbar-col: "#EAEAEA"
+navbar-text-col: "#404040"
+navbar-border-col: "#DDDDDD"
+page-col: "#FFFFFF"
+text-col: "#404040"
+link-col: "#008AFF"
+hover-col: "#0085A1"
+footer-col: "#EAEAEA"
+footer-text-col: "#777777"
+footer-link-col: "#404040"
+footer-hover-col: "#0085A1"
+
+# Ruby Date Format to show dates of posts
+date_format: "%Y-%m-%d"
+
+# Output options (more information on Jekyll's site)
+timezone: "Europe/Rome"
+markdown: kramdown
+highlighter: rouge
+permalink: /:year-:month-:day-:title/
+paginate: 5
+
+kramdown:
+  input: GFM
+
+# Default YAML values (more information on Jekyll's site)
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true  # add comments to all blog posts
+      social-share: true # add social media sharing buttons to all blog posts
+  -
+    scope:
+      path: "" # any file that's not a post will be a "page" layout by default
+    values:
+      layout: "page"
+
+# Exclude these files from production site
+exclude:
+  - README_PROJECT.md
+  - LICENSE
+  - config/
+  - images/
+
+#plugins
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
+- jekyll-paginate
+- jekyll-sitemap
