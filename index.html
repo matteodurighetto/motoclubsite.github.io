@@ -1,13 +1,16 @@
 ---
 title: Motorcycle Club
+layout: default
 description: Informations and events from our Motorcycle Club
 permalink: /
+include_header: pagination.html
 ---
 <div class="home"> 
     {% capture site_lang %}
     {{ site.lang | default: "it" }}
     {% endcapture %} 
     {% assign posts=site.posts | where:"lang", page.lang %} 
+    {% include text-expand.html %}
     <ul class="post-list"> 
         {% for post in posts %} 
           {% capture lang %}
