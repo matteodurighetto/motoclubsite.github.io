@@ -3,57 +3,41 @@ title: Motorcycle Club
 description: Informations and events from our Motorcycle Club
 permalink: /
 ---
-{% assign settings = site.data.settings %}
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ settings.title.en }}</title>
-  <!-- Link to your CSS file if you have one -->
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-  <header>
-    <h1>{{ settings.title.en }}</h1>
-    <!-- Navigation links with dropdown menu -->
-    <nav>
-      <ul>
-        <li>
-        <a href="/" lang="en" xml:lang="en">Home</a>
-        <a href="/" lang="it" xml:lang="it">Casa</a>
-        </li>
-        <li><a href="/events" lang="en">Events</a><a href="/events" lang="it">Eventi</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn" lang="en">Chapters</a><a href="#" class="dropbtn" lang="it">Capitoli</a>
-          <div class="dropdown-content">
-            <a href="chapter1.html" lang="en">Chapter 1</a><a href="chapter1.html" lang="it">Capitolo 1</a>
-            <a href="chapter2.html" lang="en">Chapter 2</a><a href="chapter2.html" lang="it">Capitolo 2</a>
-            <a href="chapter3.html" lang="en">Chapter 3</a><a href="chapter3.html" lang="it">Capitolo 3</a>
-          </div>
-        </li>
-        <li><a href="/gallery" lang="en">Gallery</a><a href="/gallery" lang="it">Galleria</a></li>
-        <li><a href="/contact" lang="en">Contact</a><a href="/contact" lang="it">Contatto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Content goes here -->
-    <h2 lang="en">Welcome to {{ settings.title.en }}</h2>
-    <h2 lang="it">Benvenuti nel {{ settings.title.it }}</h2>
-    <p lang="en">We are a motorcycle club passionate about riding and camaraderie.</p>
-    <p lang="it">Siamo un club motociclistico appassionato di guida e cameratismo.</p>
-    <p lang="en">Join us on epic journeys, thrilling events, and lifelong friendships.</p>
-    <p lang="it">Unisciti a noi in viaggi epici, eventi emozionanti e amicizie durature.</p>
-  </main>
-
-  <footer>
-    <!-- Footer content goes here -->
-    <p>&copy; <span id="currentYear"></span> {{ settings.title.en }}</p>
-  </footer>
-  
-  <!-- Optionally, include JavaScript files if needed -->
-  <script src="assets/js/script.js"></script>
-  </body>
-</html>
+<div class="home"> 
+    {% capture site_lang %}
+    {{ site.lang | default: "it" }}
+    {% endcapture %} 
+    {% assign posts=site.posts | where:"lang", page.lang %} 
+    <ul class="post-list"> 
+        {% for post in posts %} 
+          {% capture lang %}
+            {% if post.lang != site_lang %}
+              {{ post.lang }}
+            {% else %}
+              {{ site_lang }}
+            {% endif %}
+          {% endcapture %} 
+        <li {% if lang !=empty %} lang="{{ lang }}" {% endif %}>
+            <header class="post-header">
+                <h1 class="post-title"> 
+                    <a class="post-link" href="{{ post.url | relative_url }}">
+                        {{ post.title | escape }}
+                        {% if post.external-url %} &rarr;
+                        {% endif %}
+                    </a> 
+                </h1>
+                <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}
+                    {% if post.tags != empty %} • {% for tag in
+                    post.tags %} {{ tag }} • {% endfor %}{% endif %}</p>
+            </header>
+            <div class="post-content"> 
+                {{ post.excerpt }} 
+            </div> 
+            {% if post.content contains site.excerpt_separator %}
+            <p class="post-continue"> 
+                <a href="{{ post.url | relative_url }}">Leggi &rarr;</a> 
+            </p> {% endif %} </li>
+        {% endfor %}
+    </ul>
+    {% include pagination.html %} 
+</div>
