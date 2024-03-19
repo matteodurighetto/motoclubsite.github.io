@@ -1,4 +1,0 @@
-{
-    "ClubName": "Moto Club Monastier",
-    "ClubNameHeader": "Moto Club Monastier FMI"
-}

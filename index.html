@@ -1,39 +1,54 @@
+---
+# index.html
+---
+{% assign settings = site.data.settings %}
 <!DOCTYPE html>
 <html lang="en">
-    <script>
-        // Fetch motorcycle club name from external file
-        config=JSON.parse(fetch('ClubName.txt'))
-        document.getElementById('ClubName').innerText = config.ClubName ;
-        document.getElementById('ClubNameHeader').innerText = `TEST Welcome to the ${config.ClubName}'s GitHub Pages!`;
-    </script>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="clubName">${config.ClubName} Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ settings.title.en }}</title>
+  <!-- Link to your CSS file if you have one -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1 id="clubNameHeader">Welcome to the Awesome Motorcycle Club's GitHub Pages!</h1>
+  <header>
+    <h1>{{ settings.title.en }}</h1>
+    <!-- Navigation links with dropdown menu -->
+    <nav>
+      <ul>
+        <li><a href="/" lang="en">Home</a><a href="/" lang="it">Casa</a></li>
+        <li><a href="/events" lang="en">Events</a><a href="/events" lang="it">Eventi</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn" lang="en">Chapters</a><a href="#" class="dropbtn" lang="it">Capitoli</a>
+          <div class="dropdown-content">
+            <a href="chapter1.html" lang="en">Chapter 1</a><a href="chapter1.html" lang="it">Capitolo 1</a>
+            <a href="chapter2.html" lang="en">Chapter 2</a><a href="chapter2.html" lang="it">Capitolo 2</a>
+            <a href="chapter3.html" lang="en">Chapter 3</a><a href="chapter3.html" lang="it">Capitolo 3</a>
+          </div>
+        </li>
+        <li><a href="/gallery" lang="en">Gallery</a><a href="/gallery" lang="it">Galleria</a></li>
+        <li><a href="/contact" lang="en">Contact</a><a href="/contact" lang="it">Contatto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <h2>About Us</h2>
-        <p>We are a passionate community of motorcycle enthusiasts who love to ride, explore, and connect with fellow riders. Our club is open to riders of all levels, from beginners to seasoned veterans. Join us on our adventures!</p>
+  <main>
+    <!-- Content goes here -->
+    <h2 lang="en">Welcome to {{ settings.title.en }}</h2>
+    <h2 lang="it">Benvenuti nel {{ settings.title.it }}</h2>
+    <p lang="en">We are a motorcycle club passionate about riding and camaraderie.</p>
+    <p lang="it">Siamo un club motociclistico appassionato di guida e cameratismo.</p>
+    <p lang="en">Join us on epic journeys, thrilling events, and lifelong friendships.</p>
+    <p lang="it">Unisciti a noi in viaggi epici, eventi emozionanti e amicizie durature.</p>
+  </main>
 
-        <h2>Events</h2>
-        <p>Stay tuned for upcoming events and rides! Whether it's a scenic countryside tour, a thrilling track day, or a community meetup, we have something for everyone.</p>
-
-        <h2>Membership</h2>
-        <p>Interested in joining our club? Membership is open to anyone who shares our love for motorcycles and a sense of camaraderie. Reach out to us to learn more about becoming a member.</p>
-
-        <h2>Connect with Us</h2>
-        <ul>
-            <li><strong>Website:</strong> <a href="https://yourclubwebsite.com">Awesome Motorcycle Club</a></li>
-            <li><strong>Facebook:</strong> <a href="https://www.facebook.com/AwesomeMCClub">AwesomeMCClub</a></li>
-            <li><strong>Instagram:</strong> <a href="https://www.instagram.com/awesome_mc_club/">@awesome_mc_club</a></li>
-            <li><strong>Twitter:</strong> <a href="https://twitter.com/AwesomeMC">@AwesomeMC</a></li>
-        </ul>
-
-        <h2>Get in Touch</h2>
-        <p>Have questions or want to get involved? Feel free to reach out to us via email at <a href="mailto:info@yourclubwebsite.com">info@yourclubwebsite.com</a> or through our social media channels.</p>
-    </div>
-</body>
+  <footer>
+    <!-- Footer content goes here -->
+    <p>&copy; <span id="currentYear"></span> {{ settings.title.en }}</p>
+  </footer>
+  
+  <!-- Optionally, include JavaScript files if needed -->
+  <script src="assets/js/script.js"></script>
+  </body>
 </html>
